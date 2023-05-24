@@ -1,17 +1,16 @@
 // variables to keep track of quiz state
 var currentQuestionIndex = 0;
-//time left value here
-// var time = ;
+var time = questions.length * 20;
 var timerId;
 
 // variables to reference DOM elements
-var questionsEl = document.getElementById('');
-var timerEl = document.getElementById('');
-var choicesEl = document.getElementById('');
-var submitBtn = document.getElementById('');
-var startBtn = document.getElementById('');
-var initialsEl = document.getElementById('');
-var feedbackEl = document.getElementById('');
+var questionsEl = document.getElementById('questions');
+var timerEl = document.getElementById('time');
+var choicesEl = document.getElementById('choices');
+var submitBtn = document.getElementById('submit');
+var startBtn = document.getElementById('start');
+var initialsEl = document.getElementById('initials');
+var feedbackEl = document.getElementById('feedback');
 
 
 function startQuiz() {
@@ -93,6 +92,7 @@ function questionClick(event) {
     
     // if it didnt??
   }
+}
 }
 
 function quizEnd() {
