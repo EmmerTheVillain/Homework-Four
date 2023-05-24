@@ -68,21 +68,25 @@ function questionClick(event) {
   }
 
   // check if user guessed wrong
-  if () {
-
-
-
+  if (buttonEl.value !== questions[currentQuestionIndex].answer) {
     // penalize time
-    
-  
-   
-
+    time -= 15;
+    if(time < 0){
+      time = 0;
+    }
     // display new time on page
-   
-
-  // flash right/wrong feedback on page for half a second
- 
-
+  timerEl.textContent = time;
+    //play incorrect sound
+  sfxIncorrect.play();
+  //feedback text output
+  feedbackEl.textContent = 'Incorrect!'
+  }else{
+    //play correct sound
+    sfxCorrect.play();
+    //feedback text output
+    feedbackEl.textContent = 'Correct!';
+  }
+  
   // move to next question
   
 
