@@ -12,6 +12,9 @@ var startBtn = document.getElementById('start');
 var initialsEl = document.getElementById('initials');
 var feedbackEl = document.getElementById('feedback');
 
+//sound effect variables
+var sfxCorrect = new Audio('assets\sfx\correct.wav')
+var sfxIncorrect = new Audio('assets\sfx\incorrect.wav')
 
 function startQuiz() {
   // hide start screen
