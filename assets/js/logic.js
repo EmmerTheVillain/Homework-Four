@@ -42,7 +42,7 @@ function getQuestion() {
   choicesEl.innerHTML = '';
 
   // loop over choices
-  for (var i = 0; i < ; i++) {
+  for (var i = 0; i < currentQuestion.choices.length; i++) {
     // create new button for each choice
     var choice = currentQuestion.choices[i];
     var choiceNode = document.createElement('');
