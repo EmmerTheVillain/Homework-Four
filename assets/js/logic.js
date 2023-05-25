@@ -13,8 +13,8 @@ var initialsEl = document.getElementById('initials');
 var feedbackEl = document.getElementById('feedback');
 
 //sound effect variables
-var sfxCorrect = new Audio('assets\sfx\correct.wav')
-var sfxIncorrect = new Audio('assets\sfx\incorrect.wav')
+var sfxCorrect = new Audio('assets\sfx\correct.wav');
+var sfxIncorrect = new Audio('assets\sfx\incorrect.wav');
 
 function startQuiz() {
   // hide start screen
@@ -48,6 +48,7 @@ function getQuestion() {
   for (var i = 0; i < currentQuestion.choices.length; i++) {
     // create new button for each choice
     var choice = currentQuestion.choices[i];
+    //creates button for option
     var choiceNode = document.createElement('button');
     choiceNode.setAttribute('class', 'choice');
     choiceNode.setAttribute('value', choice);
@@ -79,14 +80,18 @@ function questionClick(event) {
     //play incorrect sound
   sfxIncorrect.play();
   //feedback text output
-  feedbackEl.textContent = 'Incorrect!'
-  }else{
+  feedbackEl.textContent = 'Incorrect! -15 Seconds!'
+}else{
     //play correct sound
     sfxCorrect.play();
     //feedback text output
     feedbackEl.textContent = 'Correct!';
   }
   
+  feedbackEl.setAttribute('class', 'feedback');
+  setTimeout(function() {
+    feedbackEl.setAttribute('class', 'hide');
+  }, 1000)
   // move to next question
   currentQuestionIndex++;
 
