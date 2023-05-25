@@ -13,8 +13,8 @@ var initialsEl = document.getElementById('initials');
 var feedbackEl = document.getElementById('feedback');
 
 //sound effect variables
-var sfxCorrect = new Audio('assets\sfx\correct.wav');
-var sfxIncorrect = new Audio('assets\sfx\incorrect.wav');
+var sfxCorrect = new Audio('assets/sfx/correct.wav');
+var sfxIncorrect = new Audio('assets/sfx/incorrect.wav');
 
 function startQuiz() {
   // hide start screen
@@ -118,7 +118,7 @@ function quizEnd() {
   finalScoreEl.textContent = time;
 
   // hide questions section
-  questions.setAttribute('class', 'hide');
+  questionsEl.setAttribute('class', 'hide');
 }
 
 function clockTick() {
@@ -138,7 +138,7 @@ function saveHighscore() {
   var initials = initialsEl.value.trim();
 
   // make sure value wasn't empty
-  if (initals !== '') {
+  if (initials !== '') {
 
     // get saved scores from localstorage, or if not any, set to empty array
     
