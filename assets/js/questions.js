@@ -1,23 +1,28 @@
 // list of all questions, choices, and answers
 var questions = [
   {
-    title: 'Test Question',
-    choices: ['placeholder 1', 'placeholder 2', 'placeholder 3', 'placeholder 4'],
-    answer: 'placeholder 1',
+    title: 'Commonly used data types DO NOT include:',
+    choices: ['Strings', 'Booleans', 'Alerts', 'Numbers'],
+    answer: 'Alerts',
   },
   {
-    title: 'Test Question 2',
-    choices: ['placeholder 1', 'placeholder 2', 'placeholder 3', 'placeholder 4'],
-    answer: 'placeholder 2',
+    title: 'The codition in an if/else statement is enclosed within what?',
+    choices: ['Quotation Marks', 'Curly Brackets', 'Parentheses', 'Square Brackets'],
+    answer: 'Parentheses',
   },
   {
-    title: 'Test Question 3',
-    choices: ['placeholder 1', 'placeholder 2', 'placeholder 3', 'placeholder 4'],
-    answer: 'placeholder 3',
+    title: 'Arrays in Javascript can be used to store what?',
+    choices: ['Numbers and Strings', 'Other Arrays', 'Booleans', 'All of the Above'],
+    answer: 'All of the Above',
   },
   {
-    title: 'Test Question 4',
-    choices: ['placeholder 1', 'placeholder 2', 'placeholder 3', 'placeholder 4'],
-    answer: 'placeholder 4',
+    title: 'Strings must be enclosed in what when being assigned to variables?',
+    choices: ['Commas', 'Curly Brackets', 'Quotation Marks', 'Parentheses'],
+    answer: 'Quotation Marks',
+  },
+  {
+    title: 'A very useful tool to use during development and debugging for prining content to the debugger is what?',
+    choices: ['JavaScript', 'Terminal/Bash', 'For Loops', 'console.log'],
+    answer: 'console.log',
   },
 ];
