@@ -156,7 +156,7 @@ function saveHighscore() {
     window.localStorage.setItem('highscores', JSON.stringify(highscores));
 
     // redirect to next page
-    window.location.href = 'highscrores.html';
+    window.location.href = 'highscores.html';
   }
 }
 
