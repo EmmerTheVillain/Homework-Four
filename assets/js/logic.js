@@ -29,7 +29,7 @@ function startQuiz() {
 
   // show starting time
   timerEl.textContent = time;
-
+//run getQuestion function
   getQuestion();
 }
 
@@ -41,14 +41,13 @@ function getQuestion() {
   var titleEl = document.getElementById('question-title');
   titleEl.textContent = currentQuestion.title;
 
-  // clear out any old question choices
+  // clear out old question choices
   choicesEl.innerHTML = '';
 
-  // loop over choices
+  // loop to create new choices
   for (var i = 0; i < currentQuestion.choices.length; i++) {
     // create new button for each choice
     var choice = currentQuestion.choices[i];
-    //creates button for option
     var choiceNode = document.createElement('button');
     choiceNode.setAttribute('class', 'choice');
     choiceNode.setAttribute('value', choice);
@@ -59,7 +58,7 @@ function getQuestion() {
     choicesEl.appendChild(choiceNode);
   }
 }
-
+//function to handle timer and correct/incorrect choice options
 function questionClick(event) {
   var buttonEl = event.target;
 
@@ -87,8 +86,9 @@ function questionClick(event) {
     //feedback text output
     feedbackEl.textContent = 'Correct!';
   }
-  
+  //unhide feedback
   feedbackEl.setAttribute('class', 'feedback');
+  //rehide feedback after a second
   setTimeout(function() {
     feedbackEl.setAttribute('class', 'hide');
   }, 1000)
@@ -105,7 +105,7 @@ function questionClick(event) {
   }
 }
 
-
+//function to end quiz and move to end screen
 function quizEnd() {
   // stop timer
  clearInterval(timerId);
@@ -120,19 +120,18 @@ function quizEnd() {
   // hide questions section
   questionsEl.setAttribute('class', 'hide');
 }
-
+//time clock function
 function clockTick() {
   // update time
   time--;
   // decrement the variable we are using to track time
-  timerEl.textContent = time; // update out time
-
+  timerEl.textContent = time;
   // check if user ran out of time
   if (time <= 0) {
     quizEnd();
   }
 }
-
+//function to save highscore to local storage and move to highscore page
 function saveHighscore() {
   // get value of input box
   var initials = initialsEl.value.trim();
@@ -140,8 +139,7 @@ function saveHighscore() {
   // make sure value wasn't empty
   if (initials !== '') {
 
-    // get saved scores from localstorage, or if not any, set to empty array
-    
+    // sets highscore variable and parses saved scores from localstorage, or if not any, set to empty array
     var highscores =
       JSON.parse(window.localStorage.getItem('highscores')) || [];
 
@@ -161,7 +159,7 @@ function saveHighscore() {
 }
 
 function checkForEnter(event) {
-  // "13" represents the enter key
+  //checks if button if highscore submit button is pressed and runs saveHighscore when it is
   if (event.key === 'Enter') {
     saveHighscore();
   }
