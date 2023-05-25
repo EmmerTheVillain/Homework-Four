@@ -118,8 +118,9 @@ function quizEnd() {
 
 function clockTick() {
   // update time
+  time--;
   // decrement the variable we are using to track time
-  timerEl.textContent = ; // update out time
+  timerEl.textContent = time; // update out time
 
   // check if user ran out of time
   if (time <= 0) {
@@ -132,12 +133,12 @@ function saveHighscore() {
   var initials = initialsEl.value.trim();
 
   // make sure value wasn't empty
-  if () {
+  if (initals !== '') {
 
     // get saved scores from localstorage, or if not any, set to empty array
     
     var highscores =
-      JSON.parse() /* what would go inside the PARSE??*/ || [];
+      JSON.parse(window.localStorage.getItem('highscores')) || [];
 
     // format new score object for current user
     var newScore = {
@@ -147,10 +148,10 @@ function saveHighscore() {
 
     // save to localstorage
     highscores.push(newScore);
-    window.localStorage.setItem('highscores', JSON.stringify(/* What would we put inside STRINGIFY? */));
+    window.localStorage.setItem('highscores', JSON.stringify(highscores));
 
     // redirect to next page
-    window.location.href = '';
+    window.location.href = 'highscrores.html';
   }
 }
 
