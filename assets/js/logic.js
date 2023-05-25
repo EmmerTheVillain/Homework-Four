@@ -88,19 +88,18 @@ function questionClick(event) {
   }
   
   // move to next question
-  
+  currentQuestionIndex++;
 
-  // check if we've run out of questions or if time ran out?
-  if () {
-
-    //if it did ???
-
+  // check if we've run out of time or questions 
+  if (time <= 0 || currentQuestionIndex === questions.length) {
+    //ends quiz
+    quizEnd();
   } else {
-    
-    // if it didnt??
+    //get next question
+    getQuestion();
   }
 }
-}
+
 
 function quizEnd() {
   // stop timer
